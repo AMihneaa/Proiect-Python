@@ -20,5 +20,6 @@ class YourModelSerializer(serializers.ModelSerializer):
     studenti = StudentSerializer(many=True, read_only=True);
 
     class Meta:
+
         model = Materii
         fields = '__all__'
