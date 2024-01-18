@@ -23,8 +23,9 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
-    backgroundColor: "#FFD6E7", // Roz predominant
+    background: "linear-gradient(to right, #ff66a3, #8a2be2)", // Gradient de la roz la mov
   },
+  
   heading: {
     color: "#FF006E", // Roz închis pentru titlu
   },
