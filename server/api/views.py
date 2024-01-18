@@ -5,7 +5,7 @@ from .models import Materii, Student
 from .serializers import YourModelSerializer, StudentSerializer
 
 class YourModelListCreateView(generics.ListCreateAPIView):
-    queryset = Materii.objects.all()
+    queryset = Materii.objects.all() # queryset = Materii.object.all() = cauta toate materiile si le baga intr un query, care e o lista
     serializer_class = YourModelSerializer
 
 
