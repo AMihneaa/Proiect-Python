@@ -51,6 +51,7 @@ const StudentiList = () => {
     { field: "nume", headerName: "Nume", width: 200 },
     { field: "prenume", headerName: "Prenume", width: 200 },
     { field: "nota", headerName: "Nota", width: 150 },
+    {field: "serie", headerName:"Seria", width: 100},
   ];
 
   console.log(materii);
@@ -67,8 +68,8 @@ const StudentiList = () => {
   };
 
   return (
-    <div>
-      <h2>Listă de Studenti:</h2>
+    <div style={{    textAlign: 'center',  marginBottom: "20px"}}>
+      <h2 style={{color: "white", margin: "30px", paddingTop: "50px", fontSize: "30px"}}>Listă de Studenti:</h2>
       <Stack direction="row" justifyContent="flex-end" marginBottom={2}>
         <Snackbar
           open={!!error}

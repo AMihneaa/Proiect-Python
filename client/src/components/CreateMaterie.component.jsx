@@ -24,7 +24,8 @@ const PinkContainer = styled("div")({
   backgroundColor: "#ff69b4", // Roz
   padding: "20px",
   borderRadius: "8px",
-  marginBottom: "20px",
+  marginBottom: "50px",
+
 });
 
 const PinkButton = styled(Button)({

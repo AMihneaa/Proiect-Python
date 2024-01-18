@@ -10,7 +10,7 @@ import { Stack, Snackbar, MenuItem, Select } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 
 import CreateMaterie from "./CreateMaterie.component.jsx";
-import { width } from "@mui/system";
+import { color, width } from "@mui/system";
 
 import AsociateStudents from "./AsociateStudent.component.jsx";
 
@@ -64,7 +64,7 @@ const MaterieList = () => {
             {params.row.studenti.map((student) => (
               <MenuItem key={student.id} value={student.id}>
                 {student.nume} {student.prenume}
-                Nota: {student.nota}
+                {",  seria"}     {student.serie}
               </MenuItem>
             ))}
           </Select>
@@ -95,9 +95,10 @@ const MaterieList = () => {
   };
 
   return (
-    <div >
-      <h2>Listă de Materii:</h2>
-      <Stack direction="row"  justifyContent="flex-end" marginBottom={2} >
+    <div style={{    textAlign: 'center',  marginBottom: "20px"
+  }} >
+      <h2 style={{color: "white", margin: "30px", paddingTop: "50px", fontSize: "30px"}}>Listă de Materii:</h2>
+      <Stack direction="row"  justifyContent="flex-end" marginBottom={5} >
         <Snackbar
           open={!!error}
           autoHideDuration={6000}
