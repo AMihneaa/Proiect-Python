@@ -54,7 +54,7 @@ const MaterieList = () => {
     {
       field: "students",
       headerName: "Studenți",
-      width: 200,
+      width: 150,
       renderCell: (params) => (
         <div style={{ height: "auto", width: 200, margin: "auto" }}>
           <Select
@@ -74,7 +74,7 @@ const MaterieList = () => {
     {
       field: "add",
       headerName: "Asociaza Studenti",
-      width: 400,
+      width: 200,
       sortable: false,
       filterable: false,
       renderCell: (row) => <AsociateStudents materie={row.row} />,
@@ -87,10 +87,17 @@ const MaterieList = () => {
     setMaterii([...materii, newMaterie]);
   };
 
+  const divStyle = {
+    backgroundColor: '#fff  ff', // Codul de culoare pentru alb
+    // Alte stiluri în linie adăugate dacă este necesar
+    padding: '10px',
+    border: '1px solid #ccc',
+  };
+
   return (
-    <div>
+    <div >
       <h2>Listă de Materii:</h2>
-      <Stack direction="row" justifyContent="flex-end" marginBottom={2}>
+      <Stack direction="row"  justifyContent="flex-end" marginBottom={2} >
         <Snackbar
           open={!!error}
           autoHideDuration={6000}
@@ -106,7 +113,7 @@ const MaterieList = () => {
           </MuiAlert>
         </Snackbar>
       </Stack>
-      <div style={{ height: 400, width: "80%", margin: "auto" }}>
+      <div style={{ height: 400, width: "80%", margin: "auto", background:"white" }}>
         {/* <Stack mt={2} mb={2}>
             <AddMaterie />
           </Stack> */}

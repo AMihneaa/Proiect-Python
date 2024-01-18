@@ -27,7 +27,8 @@ const styles = {
   },
   
   heading: {
-    color: "#FF006E", // Roz închis pentru titlu
+    fontSize: "50px",
+    color: "white", // Roz închis pentru titlu
   },
   buttonPink: {
     margin: "10px",

@@ -19,6 +19,22 @@ const StyledCreateMaterie = styled("div")({
   },
 });
 
+
+const PinkContainer = styled("div")({
+  backgroundColor: "#ff69b4", // Roz
+  padding: "20px",
+  borderRadius: "8px",
+  marginBottom: "20px",
+});
+
+const PinkButton = styled(Button)({
+  backgroundColor: "#ff69b4", // Roz
+  color: "#fff", // Text alb
+  "&:hover": {
+    backgroundColor: "#e0458d", // Nuanță roz mai închisă la hover
+  },
+});
+
 const CreateMaterie = ({ onMaterieCreated }) => {
   const [materieData, setMaterieData] = useState({
     name: "",
@@ -51,14 +67,16 @@ const CreateMaterie = ({ onMaterieCreated }) => {
   };
 
   return (
-    <StyledCreateMaterie>
-      <h3>Adaugă Materie Nouă:</h3>
+    <PinkContainer>
+      <h3 style={{ color: "#fff" }}>Adaugă Materie Nouă:</h3>
       <TextField
         label="Nume"
         value={materieData.name}
         onChange={handleInputChange("name")}
         variant="outlined"
         size="small"
+        style={{ marginBottom: "10px" }}
+        InputProps={{ style: { backgroundColor: "#fff" } }}
       />
       <TextField
         label="Descriere"
@@ -66,6 +84,8 @@ const CreateMaterie = ({ onMaterieCreated }) => {
         onChange={handleInputChange("description")}
         variant="outlined"
         size="small"
+        style={{ marginBottom: "10px" }}
+        InputProps={{ style: { backgroundColor: "#fff" } }}
       />
       <TextField
         label="An Licenta"
@@ -73,11 +93,13 @@ const CreateMaterie = ({ onMaterieCreated }) => {
         onChange={handleInputChange("anLicenta")}
         variant="outlined"
         size="small"
+        style={{ marginBottom: "10px" }}
+        InputProps={{ style: { backgroundColor: "#fff" } }}
       />
-      <Button variant="contained" color="primary" onClick={handleCreateMaterie}>
+      <PinkButton variant="contained"  onClick={handleCreateMaterie}>
         Adaugă Materie
-      </Button>
-    </StyledCreateMaterie>
+      </PinkButton>
+    </PinkContainer>
   );
 };
 

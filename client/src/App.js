@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Materii from "./views/Materii.views.jsx";
 import { Studenti } from "./views/Studenti.views.jsx";
 import { Home } from "./views/Home.views.jsx";
+import "./App.css"
 
 function App() {
   const router = createBrowserRouter([

@@ -59,6 +59,13 @@ const StudentiList = () => {
     setMaterii([...materii, newMaterie]);
   };
 
+  const divStyle = {
+    backgroundColor: '#fff  ff', // Codul de culoare pentru alb
+    // Alte stiluri în linie adăugate dacă este necesar
+    padding: '10px',
+    border: '1px solid #ccc',
+  };
+
   return (
     <div>
       <h2>Listă de Studenti:</h2>
@@ -78,7 +85,7 @@ const StudentiList = () => {
           </MuiAlert>
         </Snackbar>
       </Stack>
-      <div style={{ height: 400, width: "80%", margin: "auto" }}>
+      <div style={{ height: 400, width: "80%", margin: "auto", background: "white" }}>
         {/* <Stack mt={2} mb={2}>
             <AddMaterie />
           </Stack> */}
