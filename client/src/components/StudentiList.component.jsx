@@ -9,7 +9,7 @@ import {
 import { Stack, Snackbar, MenuItem, Select } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 
-import CreateMaterie from "./CreateMaterie.component.jsx";
+import AddStudent from "../components/CreateStudenti.component.jsx";
 import { width } from "@mui/system";
 
 const StudentiList = () => {
@@ -48,9 +48,9 @@ const StudentiList = () => {
 
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "nume", headerName: "Numele Materiei", width: 200 },
-    { field: "prenume", headerName: "Descriere", width: 200 },
-    { field: "nota", headerName: "An Licenta", width: 150 },
+    { field: "nume", headerName: "Nume", width: 200 },
+    { field: "prenume", headerName: "Prenume", width: 200 },
+    { field: "nota", headerName: "Nota", width: 150 },
   ];
 
   console.log(materii);
@@ -59,11 +59,9 @@ const StudentiList = () => {
     setMaterii([...materii, newMaterie]);
   };
 
-  const AddMaterie = () => {};
-
   return (
     <div>
-      <h2>Listă de Materii:</h2>
+      <h2>Listă de Studenti:</h2>
       <Stack direction="row" justifyContent="flex-end" marginBottom={2}>
         <Snackbar
           open={!!error}
@@ -96,7 +94,7 @@ const StudentiList = () => {
           onClose={() => setOpen(false)}
           message=""
         /> */}
-        <CreateMaterie onMaterieCreated={handleMaterieCreated} />
+        <AddStudent onMaterieCreated={handleMaterieCreated} />
       </div>
     </div>
   );

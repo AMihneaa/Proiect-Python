@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <div style={styles.container}>
-      <h2>Home Page</h2>
+      <h2 style={styles.heading}>Home Page</h2>
       <Link to="/students">
-        <button style={styles.button}>Students</button>
+        <button style={styles.buttonPink}>Students</button>
       </Link>
       <Link to="/courses">
-        <button style={styles.button}>Courses</button>
+        <button style={styles.buttonBlue}>Courses</button>
       </Link>
     </div>
   );
@@ -23,12 +23,26 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
+    backgroundColor: "#FFD6E7", // Roz predominant
   },
-  button: {
+  heading: {
+    color: "#FF006E", // Roz închis pentru titlu
+  },
+  buttonPink: {
     margin: "10px",
     padding: "10px 20px",
     fontSize: "16px",
-    backgroundColor: "#007BFF",
+    backgroundColor: "#FF006E", // Roz închis pentru butoane
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  buttonBlue: {
+    margin: "10px",
+    padding: "10px 20px",
+    fontSize: "16px",
+    backgroundColor: "#6FA1FF", // Albastru deschis pal pentru butoane
     color: "#fff",
     border: "none",
     borderRadius: "5px",

@@ -12,6 +12,8 @@ import MuiAlert from "@mui/material/Alert";
 import CreateMaterie from "./CreateMaterie.component.jsx";
 import { width } from "@mui/system";
 
+import AsociateStudents from "./AsociateStudent.component.jsx";
+
 const MaterieList = () => {
   const [materii, setMaterii] = useState([]);
   const [error, setError] = useState(null);
@@ -44,12 +46,10 @@ const MaterieList = () => {
     setSelectedStudent(selectedStudent);
   };
 
-  const addStudents = () => {};
-
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "nume", headerName: "Numele Materiei", width: 200 },
-    { field: "prenume", headerName: "Descriere", width: 200 },
+    { field: "name", headerName: "Numele Materiei", width: 200 },
+    { field: "description", headerName: "Descriere", width: 200 },
     { field: "anLicenta", headerName: "An Licenta", width: 150 },
     {
       field: "students",
@@ -72,13 +72,12 @@ const MaterieList = () => {
       ),
     },
     {
-      field: "_links.car.href",
-      headerName: "Add Students",
+      field: "add",
+      headerName: "Asociaza Studenti",
+      width: 400,
       sortable: false,
       filterable: false,
-      //   renderCell: (row) => (
-      //     <CreateMaterie onMaterieCreated={handleMaterieCreated} />
-      //   ),
+      renderCell: (row) => <AsociateStudents materie={row.row} />,
     },
   ];
 
@@ -87,8 +86,6 @@ const MaterieList = () => {
   const handleMaterieCreated = (newMaterie) => {
     setMaterii([...materii, newMaterie]);
   };
-
-  const AddMaterie = () => {};
 
   return (
     <div>
