@@ -11,6 +11,7 @@ import {
   ListItem,
   ListItemText,
   TextField,
+  styled,
 } from "@mui/material";
 import axios from "axios";
 
@@ -50,11 +51,19 @@ const AsociateStudents = ({ materie }) => {
     }
   };
 
+  const PinkButton = styled(Button)({
+    backgroundColor: "#ff69b4", // Roz
+    color: "#fff", // Text alb
+    "&:hover": {
+      backgroundColor: "#e0458d", // Nuanță roz mai închisă la hover
+    },
+  });
+
   return (
     <>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
+      <PinkButton variant="contained" onClick={handleOpen}>
         Asociaza Studenti
-      </Button>
+      </PinkButton>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Asociază Studenti</DialogTitle>
         <DialogContent>

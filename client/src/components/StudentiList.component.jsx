@@ -51,6 +51,7 @@ const StudentiList = () => {
     { field: "nume", headerName: "Nume", width: 200 },
     { field: "prenume", headerName: "Prenume", width: 200 },
     { field: "nota", headerName: "Nota", width: 150 },
+    {field: "serie", headerName:"Seria", width: 100},
   ];
 
   console.log(materii);
@@ -59,9 +60,16 @@ const StudentiList = () => {
     setMaterii([...materii, newMaterie]);
   };
 
+  const divStyle = {
+    backgroundColor: '#fff  ff', // Codul de culoare pentru alb
+    // Alte stiluri în linie adăugate dacă este necesar
+    padding: '10px',
+    border: '1px solid #ccc',
+  };
+
   return (
-    <div>
-      <h2>Listă de Studenti:</h2>
+    <div style={{    textAlign: 'center',  marginBottom: "20px"}}>
+      <h2 style={{color: "white", margin: "30px", paddingTop: "50px", fontSize: "30px"}}>Listă de Studenti:</h2>
       <Stack direction="row" justifyContent="flex-end" marginBottom={2}>
         <Snackbar
           open={!!error}
@@ -78,7 +86,7 @@ const StudentiList = () => {
           </MuiAlert>
         </Snackbar>
       </Stack>
-      <div style={{ height: 400, width: "80%", margin: "auto" }}>
+      <div style={{ height: 400, width: "80%", margin: "auto", background: "white" }}>
         {/* <Stack mt={2} mb={2}>
             <AddMaterie />
           </Stack> */}

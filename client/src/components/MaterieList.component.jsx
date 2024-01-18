@@ -10,7 +10,7 @@ import { Stack, Snackbar, MenuItem, Select } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 
 import CreateMaterie from "./CreateMaterie.component.jsx";
-import { width } from "@mui/system";
+import { color, width } from "@mui/system";
 
 import AsociateStudents from "./AsociateStudent.component.jsx";
 
@@ -54,7 +54,7 @@ const MaterieList = () => {
     {
       field: "students",
       headerName: "Studenți",
-      width: 200,
+      width: 150,
       renderCell: (params) => (
         <div style={{ height: "auto", width: 200, margin: "auto" }}>
           <Select
@@ -64,7 +64,7 @@ const MaterieList = () => {
             {params.row.studenti.map((student) => (
               <MenuItem key={student.id} value={student.id}>
                 {student.nume} {student.prenume}
-                Nota: {student.nota}
+                {",  seria"}     {student.serie}
               </MenuItem>
             ))}
           </Select>
@@ -74,7 +74,7 @@ const MaterieList = () => {
     {
       field: "add",
       headerName: "Asociaza Studenti",
-      width: 400,
+      width: 200,
       sortable: false,
       filterable: false,
       renderCell: (row) => <AsociateStudents materie={row.row} />,
@@ -87,10 +87,18 @@ const MaterieList = () => {
     setMaterii([...materii, newMaterie]);
   };
 
+  const divStyle = {
+    backgroundColor: '#fff  ff', // Codul de culoare pentru alb
+    // Alte stiluri în linie adăugate dacă este necesar
+    padding: '10px',
+    border: '1px solid #ccc',
+  };
+
   return (
-    <div>
-      <h2>Listă de Materii:</h2>
-      <Stack direction="row" justifyContent="flex-end" marginBottom={2}>
+    <div style={{    textAlign: 'center',  marginBottom: "20px"
+  }} >
+      <h2 style={{color: "white", margin: "30px", paddingTop: "50px", fontSize: "30px"}}>Listă de Materii:</h2>
+      <Stack direction="row"  justifyContent="flex-end" marginBottom={5} >
         <Snackbar
           open={!!error}
           autoHideDuration={6000}
@@ -106,7 +114,7 @@ const MaterieList = () => {
           </MuiAlert>
         </Snackbar>
       </Stack>
-      <div style={{ height: 400, width: "80%", margin: "auto" }}>
+      <div style={{ height: 400, width: "80%", margin: "auto", background:"white" }}>
         {/* <Stack mt={2} mb={2}>
             <AddMaterie />
           </Stack> */}
